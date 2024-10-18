@@ -1,0 +1,152 @@
+                                                                 Factors:
+>> For every number all the natural numbers <=n that divided n are called factors.
+
+example:20->1,2,4,5,10,20
+
+>> Prime numbers:having only two distinct factors -> one and it self
+>> Composite numbers: having >=3 factors
+
+>> IF we can express a number as (p1)power(a)*(p2)power(b)*(p3)power(c) then the total number of factors for that number is = (a+1)*(b+1)*(c+1), since every number power starts from 0.
+and we can able to find out the total factors by selecting single number from each row and multiplying it.
+
+>> Few numbers that can be useful for us
+-> 1024 = (2)power(10)
+-> 999 = (3)power(3)*37
+-> 1000 = (2)power(4)*(5)power(4)
+-> 1001 = 7*11*13 very important
+-> 997 = last three digit prime number
+-> 1003 = 17 * 59.
+
+>> Few important points to remember
+ :If a three digit number is in the form "AAA" then the number is definetly a multiple of 37
+ :1001->13k
+ :1003->17k
+ :1007->19k
+ :1009-> First four digit prime number
+ :10001-> 137*73
+ :10007-> First five digit prime number
+<<
+
+>>To find total number of odd factors of a number we need to exclude all the powers of two from the factors written as prime bases:
+ example: 3600=(2)power(4)*(3)power(2)*(5)power(2)
+ ->Total factors are (4+1)*(2+1)*(2+1)=45
+ ->Total number of odd factors=(2+1)*(2+1)=6factors
+  we removed all the factors of 2 since  odd=odd*odd
+
+>>To find total number of even factors of a number we need to  take two common from the factors written as prime bases as any even number is in the from 2k:
+ example: 3600=(2)power(4)*(3)power(2)*(5)power(2)
+ ->Total factors are (4+1)*(2+1)*(2+1)=45
+ ->Total number of even factors=(3+1)*(2+1)*(2+1)=36factors 
+ -> we take two common because only (2)power(0) can produce odd factor.
+
+>>To find   numbers that are divisible by a particular number from total factors of number N we just need to take out common of partical number from the N  written as prime bases:
+ example: 3600=(2)power(4)*(3)power(2)*(5)power(2)
+ ->Total factors are (4+1)*(2+1)*(2+1)=45
+ ->Factors of 3600 that are divisible by 15
+ ->15=3*5
+ ->IF we take out 15 the remaining number is (2)power(4)*3*5 and the total factors are (4+1)*(1+1)*(1+1)=20factors that are divisible by 15!
+
+>>To find number of factors that are perfect squares in a given number the formula is:
+ -> If number is written in (p1^a)*(p2^b)*(p3^c) where p1,p2,p3 are prime bases then the formula is = ((a/2)+1)*((b/2)*1)*((c/2)+1) factors that are perfect squares .ignore decimal value in fraction
+-> Example 3600=(2^4)*(3^2)*(5^2) the total number of factors that are perfect squares are = ((4/2)+1)*((2/2)+1)*((2/2)+1)=3*2*2=12 factors :1,25,100,16,800,9,225,36,900,144,3600
+
+
+>>To find number of factors that are perfect cubes in a given number the formula is:
+ -> If number is written in (p1^a)*(p2^b)*(p3^c) where p1,p2,p3 are prime bases then the formula is = ((a/3)+1)*((b/3)*1)*((c/3)+1) factors that are perfect cubes .ignore decimal value in fraction
+-> Example 3600=(2^4)*(3^2)*(5^2) the total number of factors that are perfect squares are = ((4/3)+1)*((2/3)+1)*((2/3)+1)=2*1*1=2 factors :1,8
+
+>>Ordered Solution:
+->When variables are mentioned in the solution.
+->Here (a,b) and (b,a) are two different pairs of solution
+-> if n variable are given n! ways are possible.
+
+>>Unordered Solution:
+->When variables are not mentioned in the Question.
+->Here (a,b) and (b,a) are same and considered as single solution.
+
+>>How many ways a number can be written as product of its factors 
+->It is = ((1/2)*total) factors for non perfect squares.
+->for unordered solutions.
+
+>>How many ways a number can be written as product of its factors 
+->It is = total factors for non perfect squares.
+->for ordered solutions.
+
+>>Perfect Squares 
+->will have odd number of factors 
+->ex:36=(2^2)*(3^2) which has (2+1)*(2+1) factors 3*3=9factors.
+->All the +ve integers other than perfect squares will have even no:of factors.
+->No:of ways of writing a perfect square as product of two numbers = ((No:of factors+1)/2) =>unordered.
+->No:of ways of writing a perfect square as a product of two distinct factors= ((No:of factors-1)/2) =>unordered.
+ Example 3600=(2^4)*(3^2)*(5^2) total factors = 45 The total ways of writing 3600 as a product of two factors is = ((45+1)/2)=23,As a product of two distinct factors is =((45-1)/2)=22.
+->For ordered solution tha no:of ways = Total number of factors as same as non perfect squares.
+
+>>Product of factors for a number:For non perfect squares 
+->It is equal to = (number^(totlfactors/2))
+Example 48=(2^4)*3 total factors = (4+1)*2 =10factors therefore the product of all factors = (48^(10/2)) = (48^5).
+
+>>Product of factors for a number:For Perfect squares 
+-> It is equal to = (number^(totlfactors/2)) same as non perfect squares 
+Example 1024 = (2^10) total factors = 11 and product of factors = (1024^(11/2)) = ((2^10)^11/2)= 2^55.
+
+>>Sum of factors:
+-> we will find the sum of factors of any number through interior addition and later on multiplication.
+Example 1440=(2^5)*(3^2)*5 so interior multiplication means add all the powers of each prime base and then multiply 
+63*13*6=4914
+
+>>Geometric progression 
+->if the number are like a,ar,ar^2,ar^3........ar^n-1
+->Then sum of n terms = (a*(r^(n-1)-1)/(r-1)).
+->Where a is the first term and r is the common ratio and n is the number of terms.
+Example (2^0)+(2^1)+(2^2)= (1*(2^3)-1)/(2-1))=7
+
+>> Example: Find the sum of all even factors of 7200
+-> 7200=(2^5)*(3^2)*(5^2)
+=> we know that we don't care about (2^0) that brings us odd factors soo in total sum while multiplying in the 2's braccete in sum of n terms formula  the starting term would be a=2 and the rest is same so the total sum is (sum(2^1+......2^5)*(sum(3^0....3^2)*(sum(5^0...5^2)= 62*13*31 = 24986.
+
+>>When we want the sum of the reciprocals of the factors.
+-> The formula is = (sum of factors)/number because lcm of all factors is the number.
+->Example sum of reciprocals of all factors of 720 = 2418/720 =403/120.
+ Note: Derivation of factors from numbers have been completed here 
+
+>>Derivation of any number from the factors
+->IF a number has single factor the number is 1.
+->If a number N has 2 factors we can write number as (p1^1) where p1 is a prime number and we know that factors=power+1 total factors are two
+  this condition satisfies for every prime number which has exactly two factors ex:2,3,5,7
+->If a number N has exactly 3 factors then the number is in the form (p1^2) where p is a prime number that means sqrt(N)=prime number soo all the squares of prime numbers will exactly have 3 factors. ex: (2^2),(3^2),(7^2).
+->If a number N has 4 factors the number can be of different forms like one form:(p1^3) where p is a prime number factors are(3+1)=4f examples are all the cubes of prime numbers ex:(2^3),(3^3),(7^3).And the other form is (p1^1)*(p2^1) factors are (1+1)*(1+1)=4 which are same where p1,p2 are two prime numbers so any number that can be split as product of two prime numbers will exactly have 4 factors ex:6,10,14,21.
+->IF a number N has 20 factors lets discuss all possible ways to get this number form:
+  ->The first form is (p^19) factors are 19+1=20f where p is a prime number.examples:(2^19),(3^19)..etc
+  ->The second form is to think split 20 in several ways:
+    1)20=4*5 => (p1^3)*(p2^4) where p1,p2 are two prime numbers and factors=(3+1)*(4+1)= 20f.
+    2)20=2*10 => (p1)*(p2^9) where p1,p2 are two prime bases and factors=(1+1)*(9+1)= 20f.
+    3)20=2*2*5 => (p1)*(p2)*(p3^4) where p1,p2,p3 are prime bases and factors=(1+1)*(1+1)*(4+1)= 20f.
+    Here the concept is we have to split as many as we can to get 20 factors for a number.
+ Example : IF N has 20 factors  what  is the minimum possible value of N:
+           we know that we can form a number in 3 ways to get 20 factors:
+           1) 20f = p^19 so to get minimum value lets assign p to first prime number 2^19 which is very large.
+           Lets split as much as we can and see at where we will get the minimum value 
+           2) 20f = (p1^3)*(p2^4) so assign lowest value to highest power which is equal to (2^4)*(3^3)=16*27 = 432 
+           3) 20f = (p1)*(p2^9) so it becomes (2^9)*3 = 512*3= 1536.
+           4) 20f = (p1^1)*(p2^1)*(p3^4) so by assigning we will get (2^4)*3*5=240. 
+Among all the values the minimum is 240 which has 20 factors. So in this case maximum splitting has given us the minimum value
+Example 2: The minimum value of a number having 60f is 5140
+
+>>"Not all ways maximum splitting will give us the minimum value" -> but it works for larger number
+
+>>Now lets see an Example where the above statements fails.
+->Let us consider for 16 factors we need to find the minimum value of number.
+  1)First form p1^15  by assigning the minimum value here is 2^15 very large.
+  2)16f = 2*8 => (p1)*(p2^7) = (2^7)*3 = 128*3 = 384
+  3)16f = 4*4 => (p1^3)*(p2^3) by assigning minimum value is (2^3)*(3^3)= 8*27 = 216
+  4)16f = 2*2*4 => p1*p2*(p3^3) by assigning minimum value is (2^3)*3*5 = 120
+  5) 16f = 2*2*2*2 => p1*p2*p3*p4  by assigning minimum value is 2*3*5*7=210.
+So,if we observe we get minimum value in splitting as 3 primes bases rather than four which disproves the above statement soo it is not always maximum splitting but nearest to it.
+
+>>New concept if N^2 has X factors then how many factors do N has and any power of N has like N^X.
+->So to find out this we know how to derive form of a number having "F" factors we will check each and every possibility and find factors in each case 
+Example : N^2 has 15 factors . How many do N^3 will have:
+          N^2=15f:
+                 1) 15f = p1^14 => N^2 = p1^14 => N = p1^7 soo N has 8 factors and then N^3 will be  N^3 = (p1^7)^3 = p1^21 = 22 factors
+                 2) 15f = (p1^2)*(p2^4) => N = p1*(p2^2) soo N^3 can be written as (p1^3)*(p2^6) soo factors = 4*7 = 28 factors.
+
